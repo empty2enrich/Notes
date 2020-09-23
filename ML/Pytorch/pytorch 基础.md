@@ -17,6 +17,8 @@ tor.mul(a,b) # 结果 size: 2,3
 ```
 * torch.mm torch.matmul (矩阵乘法)
 
+<font color=FF0000>注：torch.mm 只能接受二维矩阵, torch.matmul 可接受多维数组</font>
+
 ```
 import torch
 a = torch.randn(2,3)
