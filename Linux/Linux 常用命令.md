@@ -2,6 +2,7 @@
 
 ## 目录
 * [find](#find)
+* [sed](#sed)
 
 ## <h2 id="find">find</h2>
 
@@ -16,5 +17,19 @@
 `find dir -name name -exec -ls -l {} \;`
 
 `find dir -name name | xargs ls -lh`
+
+
+## <h2 id="sed">sed</h2>
+
+sed 替换规则里 "/" 可以使用正则, "#" 使用原始 str 直接替换，有特殊字符会转义。
+
+# sed -i "s/replace_str/target_str/g"
+
+```
+# replace str 与 target str 可以使用正则
+sed -i "s/replace_str/target_str/g"
+# replace str 与 target str 不能使用正则
+sed -i "s#replace_str#target_str/g"
+```
 
 

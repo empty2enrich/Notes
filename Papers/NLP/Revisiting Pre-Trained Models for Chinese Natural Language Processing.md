@@ -45,6 +45,8 @@ statistical language models.2
 
 ### 2.2、MacBERT
 
-修改了 MASK 方法，
+1、修改了 MASK 方法，针对预训练、微调截断数据不一致问题。使用同义词替换 token 而不是 MASK。
+
+2、NSP 替换为 SOP
 
 
