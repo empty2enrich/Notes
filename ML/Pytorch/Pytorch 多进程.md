@@ -12,7 +12,17 @@ allocation 中，进程间通信会传递整个 cudaMalloc allocation，
 (However, cudaIpcMemHandles from each device in a given process may 
 only be opened by one context per device per other process.) 
 
-下面这段代码应该是多个进程同时访问一个 cudaMalloc allocation 导致异常。
+问题原因：下面这段代码应该是多个进程同时访问一个 cudaMalloc allocation 导致异常。
+
+`queue.put(tensor)` 注释掉代码就没有问题，说明是 queue 访问数据导致出错了。
+但在 `queue.put(tensor)` 之前使用 `torch.tensor(tensor)` （复制原 tensor）就不会报错了。
+
+torch.multiprocessing 在子进程中使用 `tensor` 计算运行正常，但没有返回值，
+需要提供 `ctc.Queue()` 把返回值传回主进程
+
+将传入子进程的 `tensor` deepcopy 下再使用 `queue.put(tensor)` 运行正常，
+但主进程 `queue.get()` 的时候报错。 
+`THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingAllocator.cpp line=625 error=30 : unknown error`
 
 ```
 
