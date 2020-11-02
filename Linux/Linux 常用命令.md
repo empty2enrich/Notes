@@ -5,6 +5,8 @@
 * [sed](#sed)
 * [awk](#awk)
 * [cut](#cut)
+* [sudo](#sudo)
+
 
 ## <h2 id="find">find</h2>
 
@@ -32,4 +34,12 @@ sed -i "s/replace_str/target_str/g"
 sed -i "s#replace_str#target_str/g"
 ```
 
+## <h2 id="sudo">sudo</h2>
 
+使用管理员权限执行命令
+
+```
+# 不用手动输入密码
+echo "password" |sudo -S command
+
+```
