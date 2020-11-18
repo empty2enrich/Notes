@@ -63,6 +63,28 @@ torch.nonzero(tensor)
 tensor.max(dim).indices
 ```
 
+eg:
+
+```
+a = torch.rand(2,3)
+print(a)
+print(torch.nonzero(torch.gt(a, 0)))
+print(torch.nonzero(torch.gt(a, 0), as_tuple=True))
+
+<!--输出-->
+<!--tensor([[0.8651, 0.8329, 0.6063],-->
+        <!--[0.8405, 0.3706, 0.7069]])-->
+<!--tensor([[0, 0],-->
+        <!--[0, 1],-->
+        <!--[0, 2],-->
+        <!--[1, 0],-->
+        <!--[1, 1],-->
+        <!--[1, 2]])-->
+<!--(tensor([0, 0, 0, 1, 1, 1]), tensor([0, 1, 2, 0, 1, 2]))-->
+
+
+```
+
 ### <h2 id ='1.4比较tensor元素的值'>1.4、比较tensor元素的值</h2>
 
 同 1.5
