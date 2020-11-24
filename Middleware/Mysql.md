@@ -1,6 +1,12 @@
 # Mysql
 
-## 安装配置
+[* 安装配置](#安装配置)
+
+[* 启动服务](#启动服务)
+
+[* 命令行执行 sql 等](#命令行执行sql)
+
+## <h2 id="安装配置">安装配置</h2>
 
 ```
 # 查看 mysql 安装随机生成的密码
@@ -26,8 +32,14 @@ flush privileges;
 
 ```
 
-## 启动服务
+## <h2 id="启动服务">启动服务</h2>
 
 ```
 systemctl start mysqld
+```
+
+## <h2 id="命令行执行sql">命令行执行sql</h2>
+
+```
+mysql --user='root' --password='**' -e 'sql'
 ```

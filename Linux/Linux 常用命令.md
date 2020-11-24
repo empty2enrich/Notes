@@ -25,13 +25,18 @@
 
 ## <h2 id="sed">sed</h2>
 
-sed 替换规则里 "/" 可以使用正则, "#" 使用原始 str 直接替换，有特殊字符会转义。
+sed 替换规则里 "/" 可以使用正则, "#" 使用原始 str 直接替换，有特殊字符会转义。 
+`-i` 表示把替换后的问题写入原文件, 没有 `-i` 把替换后的问题输出控制台（原文件不变）。
 
 ```
 # replace str 与 target str 可以使用正则
 sed -i "s/replace_str/target_str/g"
 # replace str 与 target str 不能使用正则
 sed -i "s#replace_str#target_str/g"
+# 在每行末尾追加内容
+sed -i '/$/a\\n' test.txt #文件的每行末尾添加一个回车
+# 在文件末尾追加内容
+sed -i '$a\eof' test.txt # 文件末尾添加 'eof'
 ```
 
 ## <h2 id="sudo">sudo</h2>
