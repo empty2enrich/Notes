@@ -1,0 +1,2 @@
+# Hammersly-Clifford law
+
