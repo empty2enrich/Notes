@@ -1,5 +1,7 @@
 # B 树、B+ 树
 
+参考资料：https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.02.md
+
 磁盘读写分为：查找时间（最大0.1s）、等待时间（一圈大约 0.0083s）、传输时间(一个字节大约 0.02us)
 
 * B树、 B+ 树核心目的：降低磁盘 I/O 操作。
