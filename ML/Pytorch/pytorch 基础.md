@@ -3,6 +3,8 @@
 ## 目录
 [1、基本操作](#基本操作)
 
+[2、常用函数](#常用函数)
+
 
 ## <h2 id="基本操作">1、基本操作</h2>
 
@@ -105,4 +107,65 @@ torch.gt(tensor, another_tensor)
 torch.ge(tensor, another_tensor)
 # 等于
 torch.equal(tensor, another_tensor)
+```
+
+## <h2 id="常用函数">2、常用函数</h2>
+
+[2.1、torch.gather](#gather)
+
+[2.2、tensor.max(dim) or torch.max(tensor, dim)](#max)
+
+### <h2 id="gather">2.1、torch.gather</h2>
+
+torch.gather(input, dim, index, *, sparse_grad=False, out=None)
+
+概述：在指定的维度 dim 上按 index 把 input 对应位置的值拿出来。
+
+```
+t = torch.tensor([[1, 2], [3, 4]])
+torch.gather(t, 1, 
+    torch.tensor([[0, 0], [1, 0]])
+<!--输出：-->
+<!--[[1, 1], [4, 3]]-->
+<!--dim = 1 表示按列上取值，index 的第一个数组 [0, 0]中 0 表示拿第一行的 第一个值，-->
+<!--[1, 0] 表示拿第二行的第 2 个值、第一个值-->
+```
+
+
+### <h2 id="max">tensor.max(dim) or torch.max(tensor, dim)</h2>
+
+概述：返回指定维度上的最大值和indice。 torch.max 与 tensor.max 作用一样
+
+```
+t = torch.rand(5,4,3)
+t_max_value, t_max_indice = t.max(1)
+# t_max_value, t_max_indice = torch.max(t, 1)
+print(t)
+print(t_max_value)
+print(t_max_indice)
+<!--输出-->
+<!--tensor([[[0.9781, 0.3100],-->
+         <!--[0.2625, 0.7258],-->
+         <!--[0.9424, 0.6402]],-->
+
+        <!--[[0.2065, 0.2170],-->
+         <!--[0.1077, 0.5661],-->
+         <!--[0.9323, 0.5006]],-->
+
+        <!--[[0.1270, 0.3339],-->
+         <!--[0.6908, 0.7654],-->
+         <!--[0.5647, 0.4904]],-->
+
+        <!--[[0.6268, 0.9114],-->
+         <!--[0.5455, 0.6367],-->
+         <!--[0.6343, 0.0648]]])-->
+<!--tensor([[0.9781, 0.7258],-->
+        <!--[0.9323, 0.5661],-->
+        <!--[0.6908, 0.7654],-->
+        <!--[0.6343, 0.9114]])-->
+<!--tensor([[0, 1],-->
+        <!--[2, 1],-->
+        <!--[1, 1],-->
+        <!--[2, 0]])-->
+
 ```
