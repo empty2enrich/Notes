@@ -308,3 +308,7 @@ ValueError: Not a location (invalid object ID)
 改源码后不对的，把源码先改回去。 h5py torch 多进程有问题。h5pickle 传 h5py 对象没问题，
 但传 `.f_emb.create_group('word_emb')` 的对象报错，把这个 group 对象从成员变量
 里删掉就可以了。
+
+* 情形一、hdf5 文件存在，打开文件访问某个属性抛出此问题
+
+通过调查，发现在一个进程多处打开同一个 hdf5 文件，刚开始是正常的，到了后面会打不开，访问文件属性，抛出此问题。
