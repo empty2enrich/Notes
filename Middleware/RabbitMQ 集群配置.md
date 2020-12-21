@@ -25,6 +25,18 @@ reboot
 1、修改了 hostname 为 rabbit01，但 /etc/hosts 中 127.0.0.1 没有添加新的 rabbit01，
 执行 `rabbitmqadmin` 命令时提示连接不上 rabbit01。
 
+```
+rabbit@host01:
+  * unable to connect to epmd (port 4369) on host01: nxdomain (non-existing domain)
+
+
+Current node details:
+ * node name: 'rabbitmqcli-3167-rabbit@host01'
+ * effective user's home directory: /var/lib/rabbi
+```
+
+解决：先执行命令 `sudo rabbitmq-server -detached`
+
 ## 3、配置 mq
 
 ### 3.1、先关闭从节点 rabbit02 的 mq
