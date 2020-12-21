@@ -64,6 +64,8 @@ sudo chmod 400 .er*
 ```
 ####################################### rabbit01  ########################
 #修改节点名称，添加配置内容
+# 启动 rabbit01
+sudo rabbitmqctl start_app
 sudo vi /usr/lib/rabbitmq/bin/rabbitmq-env
 
 <!--添加内容-->
@@ -103,3 +105,8 @@ pkill –f rabbitmq # 这个命令好像报错了
 sudo rabbitmqctl join_cluster --ram rabbit@rabbit01 # 注意防火墙，或者端口是否能通4369
 
 ```
+
+出现问题：
+
+### 1、使用之前安装过的 rabbitmq 配置集群，设置后起不来，与 `rabbitmq@host01` 通信失败。
+
