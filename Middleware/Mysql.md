@@ -19,6 +19,8 @@ grep "temporary password" /var/log/mysqld.log
 set password for root@localhost=password('123456')
 # 方式 2
 ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+# MYSQL 8.8 版本好像不支持 alter 创建用户。
+CREATE USER 'root'@'localhost' IDENTIFIED BY '123456';
 
 # 设置密码提示密码简单，不能设置成功：
 # Your password does not satisfy the current policy requirements
@@ -26,7 +28,10 @@ set global validate_password_policy=LOW;
 set global validate_password_length=6;
 
 # 设置远程访问
+# 注： 'root'@'localhost'、 'root'@'%' 在数据库中属于不同用户。
 grant all privileges on *.* to 'root'@'%' IDENTIFIED BY '8888';
+# mysql 8
+grant all privileges on *.* to 'root'@'%';
 # 更新配置信息
 flush privileges;
 
