@@ -87,3 +87,45 @@ cat /proc/pid/status
 
 ```
  
+ 
+## 查看磁盘 I/O
+
+iotop, 安装命令 `yum install iotop`
+
+```
+iotop
+<!--Total DISK READ :	0.00 B/s | Total DISK WRITE :      17.65 K/s-->
+<!--Actual DISK READ:	0.00 B/s | Actual DISK WRITE:       0.00 B/s-->
+  <!--TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO>    COMMAND                                                                     -->
+<!--28928 be/4 ll          0.00 B/s   17.65 K/s  0.00 %  0.00 % python -u /home/ll/.pycharm_helpers/pyd~12 --file /home/ll/Github/QANet/main.py-->
+    <!--1 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % systemd --switched-root --system --deserialize 22-->
+    <!--2 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kthreadd]-->
+    <!--4 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/0:0H]-->
+    <!--5 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/u128:0]-->
+    <!--6 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/0]-->
+    <!--7 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/0]-->
+    <!--8 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [rcu_bh]-->
+    <!--9 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [rcu_sched]-->
+   <!--10 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [lru-add-drain]-->
+   <!--11 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/0]-->
+   <!--12 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/1]-->
+   <!--13 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/1]-->
+   <!--14 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/1]-->
+   <!--16 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/1:0H]-->
+   <!--18 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/2]-->
+   <!--19 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/2]-->
+   <!--20 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/2]-->
+   <!--22 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/2:0H]-->
+   <!--23 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/3]-->
+   <!--24 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/3]-->
+   <!--25 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/3]-->
+   <!--27 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/3:0H]-->
+   <!--28 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/4]-->
+   <!--29 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/4]-->
+   <!--30 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/4]-->
+<!--32799 be/4 huairuo     0.00 B/s    0.00 B/s  0.00 %  0.00 % java -Xms2048m -Xmx2048m -Xmn512m -XX:+~rver-1.0-SNAPSHOT.jar [C2 CompilerThre]-->
+   <!--32 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kworker/4:0H]-->
+   <!--33 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/5]-->
+<!--32802 be/4 huairuo     0.00 B/s    0.00 B/s  0.00 %  0.00 % java -Xms2048m -Xmx2048m -Xmn512m -XX:+~rver-1.0-SNAPSHOT.jar [C2 CompilerThre]-->
+   <!--35 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/5]-->
+```
