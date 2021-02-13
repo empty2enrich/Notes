@@ -9,6 +9,7 @@
 * [chown](#chown)
 * [chmod](#chmod)
 * [>](#>)
+* [fuser](#fuser)
 
 
 ## <h2 id="find">find</h2>
@@ -115,3 +116,23 @@ r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该
 `1>`：把标准输出写到文件内
 
 `>`：把标准输出写到文件内
+
+
+## <h2 id="fuser">fuser</h2>
+
+根据文件名，查看哪些进程在使用该文件、端口、系统(Show which processes use the 
+named files, sockets, or filesystems.)。
+
+```
+[huairuo@rabbit02 ~]$ fuser -v /dev/nvidia*
+                     USER        PID ACCESS COMMAND
+/dev/nvidia0:        huairuo   20756 F...m python
+/dev/nvidia1:        huairuo   20544 F...m python
+/dev/nvidia2:        huairuo   20763 F...m python
+/dev/nvidiactl:      huairuo   20544 F...m python
+                     huairuo   20756 F...m python
+                     huairuo   20763 F...m python
+/dev/nvidia-uvm:     huairuo   20544 F.... python
+                     huairuo   20756 F.... python
+                     huairuo   20763 F.... python
+```
