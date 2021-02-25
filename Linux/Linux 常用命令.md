@@ -10,6 +10,7 @@
 * [chmod](#chmod)
 * [>](#>)
 * [fuser](#fuser)
+* [ps](#ps)
 
 
 ## <h2 id="find">find</h2>
@@ -135,4 +136,33 @@ named files, sockets, or filesystems.)。
 /dev/nvidia-uvm:     huairuo   20544 F.... python
                      huairuo   20756 F.... python
                      huairuo   20763 F.... python
+```
+
+## <h2 id="ps">ps</h2>
+
+查看进程状态，指定输出信息
+```
+ps -eo user,stat,..,cmd 
+<!--user          用户名 -->
+<!--uid           用户号 -->
+<!--pid           进程号 -->
+<!--ppid          父进程号 -->
+<!--size          内存大小, Kbytes字节. -->
+<!--vsize         总虚拟内存大小, bytes字节(包含code+data+stack) -->
+<!--share         总共享页数 -->
+<!--nice          进程优先级(缺省为0, 最大为-20) -->
+<!--priority(pri) 内核调度优先级 -->
+<!--pmem          进程分享的物理内存数的百分比 -->
+<!--trs           程序执行代码驻留大小 -->
+<!--rss           进程使用的总物理内存数, Kbytes字节 -->
+<!--time          进程执行起到现在总的CPU暂用时间 -->
+<!--stat          进程状态 -->
+<!--cmd(args)     执行命令的简单格式 -->
+
+<!--进程状态-->
+<!--D 不可中断 uninterruptible sleep (usually IO) -->
+<!--R 运行 runnable (on run queue) -->
+<!--S 中断 sleeping -->
+<!--T 停止 traced or stopped -->
+<!--Z 僵死 a defunct ("zombie") process -->
 ```
