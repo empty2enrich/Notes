@@ -6,6 +6,8 @@
 
 [* 命令行执行 sql 等](#命令行执行sql)
 
+[* 导出 mysql 数据](#导出mysql数据)
+
 ## <h2 id="安装配置">安装配置</h2>
 
 ```
@@ -48,3 +50,6 @@ systemctl start mysqld
 ```
 mysql --user='root' --password='**' -e 'sql'
 ```
+
+
+
