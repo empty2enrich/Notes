@@ -11,6 +11,7 @@
 * [>](#>)
 * [fuser](#fuser)
 * [ps](#ps)
+* [uname](#uname)
 
 
 ## <h2 id="find">find</h2>
@@ -166,3 +167,9 @@ ps -eo user,stat,..,cmd
 <!--T 停止 traced or stopped -->
 <!--Z 僵死 a defunct ("zombie") process -->
 ```
+
+## <h2 id="uname">uname</h2>
+
+* uname -m 查看系统架构
+
+* uname -a 查看系统架构详细信息
