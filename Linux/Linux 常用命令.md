@@ -12,6 +12,7 @@
 * [fuser](#fuser)
 * [ps](#ps)
 * [uname](#uname)
+* [lsof](#lsof)
 
 
 ## <h2 id="find">find</h2>
@@ -173,3 +174,11 @@ ps -eo user,stat,..,cmd
 * uname -m 查看系统架构
 
 * uname -a 查看系统架构详细信息
+
+## <h2 id="lsof">lsof</h2>
+
+查看文件被哪些进程读写。
+
+```
+lsof |grep file_name
+```
