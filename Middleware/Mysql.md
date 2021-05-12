@@ -53,6 +53,13 @@ systemctl start mysqld
 mysql --user='root' --password='**' -e 'sql'
 ```
 
+## <h2 id="导出mysql数据">导出 MySQL 数据</h2>
+
+```
+# 导出表结构
+mysqldump -uname -ppassword dbname tablename > tablename.sql
+```
+
 ## <h2 id="MySql处理json串">MySql 处理 json 串</h2>
 
 * JSON_EXTRACT
